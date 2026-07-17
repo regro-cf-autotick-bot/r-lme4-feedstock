@@ -3,7 +3,7 @@
 
 package:
   name: r-lme4
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace('-', '_') }}"
 
 source:
   url:
@@ -28,13 +28,13 @@ requirements:
     - r-boot                       # [build_platform != target_platform]
     - r-lattice                    # [build_platform != target_platform]
     - r-mass                       # [build_platform != target_platform]
-    - r-matrix >=1.2_3             # [build_platform != target_platform]
+    - r-matrix >=1.5_0             # [build_platform != target_platform]
     - r-minqa >=1.1.15             # [build_platform != target_platform]
     - r-nlme >=3.1_123             # [build_platform != target_platform]
     - r-nloptr >=1.0.4             # [build_platform != target_platform]
-    - r-rcpp >=0.10.5              # [build_platform != target_platform]
+    - r-rcpp >=1.1.1_1.1           # [build_platform != target_platform]
     - r-rcppeigen >=0.3.3.9.4      # [build_platform != target_platform]
-    - r-reformulas >=0.3.0         # [build_platform != target_platform]
+    - r-reformulas >=0.4.3.1       # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('cxx') }}        # [not win]
@@ -52,13 +52,13 @@ requirements:
     - r-codetools
     - r-lattice
     - r-mass
-    - r-matrix >=1.2_3
+    - r-matrix >=1.5_0
     - r-minqa >=1.1.15
     - r-nlme >=3.1_123
     - r-nloptr >=1.0.4
-    - r-rcpp >=0.10.5
+    - r-rcpp >=1.1.1_1.1
     - r-rcppeigen >=0.3.3.9.4
-    - r-reformulas >=0.3.0
+    - r-reformulas >=0.4.3.1
   run:
     - r-base
     - r-boot
@@ -68,9 +68,7 @@ requirements:
     - r-minqa >=1.1.15
     - r-nlme >=3.1_123
     - r-nloptr >=1.0.4
-    - r-rcpp >=0.10.5
-    - r-rcppeigen >=0.3.3.9.4
-    - r-reformulas >=0.3.0
+    - r-reformulas >=0.4.3.1
 
 test:
   requires:
@@ -79,9 +77,9 @@ test:
   source_files:
     - tests/
   commands:
-    - $R -e "library('lme4')"                                                                           # [not win]
+    - $R -e "library('lme4')"                                                                             # [not win]
     # - $R -e "testthat::test_dir('tests/testthat/', package='lme4', load_package='installed')"           # [not win]
-    - "\"%R%\" -e \"library('lme4')\""                                                                  # [win]
+    - "\"%R%\" -e \"library('lme4')\""                                                                    # [win]
     # - "\"%R%\" -e \"testthat::test_dir('tests/testthat/', package='lme4', load_package='installed')\""  # [win]
 
 about:
